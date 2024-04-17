@@ -26,14 +26,14 @@
         }
         p {
             font-size: 4vw;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             max-width: 80%;
             font-weight: 500;
         }
         .email {
+            margin-top: 10px;
             font-size: 3vw;
             font-weight: 600;
-            margin-bottom: 30px;
         }
         .email a {
             color: white;
@@ -71,7 +71,7 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-out;
-            margin-bottom: 10px; /* Added margin-bottom */
+            margin-bottom: 10px;
         }
         .expanded-text.show {
             max-height: 1000px;
@@ -101,13 +101,13 @@
 <body>
     <h1>nScribe</h1>
     <p>Our aim is to help you realise the economic potential of artificial intelligence in a way which is transparent, trustworthy, and secure.</p>
-    <p class="email"><a href="mailto:ben@nscribe.net">ben@nscribe.net</a></p>
     <div class="expandable-section">
         <div class="expandable" onclick="toggleExpand(this)">What do we do?</div>
         <div class="expanded-text">Instead of just another complicated tool, we work with you to custom-build seamlessly integrated AI solutions to streamline your existing workflows.</div>
         <div class="expandable" onclick="toggleExpand(this)">How can we help?</div>
         <div class="expanded-text">If you can think it, we'll have a look.</div>
     </div>
+    <p class="email"><a href="mailto:ben@nscribe.net">ben@nscribe.net</a></p>
 
     <script>
         function toggleExpand(element) {
