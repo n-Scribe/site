@@ -41,7 +41,6 @@
             text-decoration: none;
         }
         .expandable-section {
-            height: 200px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -70,6 +69,12 @@
             max-width: 90%;
             color: black;
             font-weight: 500;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .expanded-text.show {
+            max-height: 500px;
         }
         @media (min-width: 768px) {
             h1 {
@@ -81,9 +86,6 @@
             }
             .email {
                 font-size: 1.25vw;
-            }
-            .expandable-section {
-                height: 150px;
             }
             .expandable {
                 font-size: 2vw;
@@ -109,8 +111,8 @@
         function toggleExpand() {
             var expandable = document.querySelector('.expandable');
             var expandedText = document.querySelector('.expanded-text');
-            expandable.classList.toggle('expanded', expandedText.style.display === 'none');
-            expandedText.style.display = expandedText.style.display === 'none' ? 'block' : 'none';
+            expandable.classList.toggle('expanded');
+            expandedText.classList.toggle('show');
         }
     </script>
 </body>
