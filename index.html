@@ -40,6 +40,10 @@
             color: white;
             text-decoration: none;
         }
+        .expandable-section {
+            height: 200px;
+            overflow: hidden;
+        }
         .expandable {
             cursor: pointer;
             font-size: 3vw;
@@ -61,8 +65,7 @@
             margin-top: 10px;
             max-width: 90%;
             color: black;
-            height: 150px;
-            overflow: hidden;
+            font-weight: 500;
         }
         @media (min-width: 768px) {
             h1 {
@@ -75,6 +78,9 @@
             .email {
                 font-size: 1.25vw;
             }
+            .expandable-section {
+                height: 150px;
+            }
             .expandable {
                 font-size: 2vw;
                 font-weight: 500;
@@ -82,18 +88,18 @@
             .expanded-text {
                 font-size: 1.25vw;
                 max-width: 40%;
-                height: 100px;
-                font-weight: 500;
             }
         }
     </style>
 </head>
 <body>
     <h1>nScribe</h1>
-    <p>Our aim is to help you realise the economic potential of artificial intelligence in a way which is transparent, trustworthy, and secure.</p>
+    <p>Helping you to realise the economic potential of artificial intelligence in a way which is transparent, trustworthy, and secure.</p>
     <p class="email"><a href="mailto:admin@nscribe.net">ben@nscribe.net</a></p>
-    <p class="expandable" onclick="toggleExpand()">Our Approach</p>
-    <p class="expanded-text">Instead of offering just another complicated tool, we custom-build seamlessly integrated solutions to streamline your workflows.</p>
+    <div class="expandable-section">
+        <p class="expandable" onclick="toggleExpand()">Our Approach</p>
+        <p class="expanded-text">Instead of offering just another complicated tool, we custom-build seamlessly integrated solutions to streamline your workflows.</p>
+    </div>
 
     <script>
         function toggleExpand() {
