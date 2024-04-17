@@ -1,87 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nScribe - AI Solutions</title>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            overflow: hidden;
-        }
-        body {
-            font-family: serif;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #34495E;
-            color: white;
-        }
-        h1 {
-            font-size: 20vw;
-            margin-bottom: 5px;
-            font-weight: normal;
-        }
-        p {
-            font-size: 4vw;
-            margin-bottom: 5px;
-            max-width: 90%;
-        }
-        .email {
-            font-size: 3vw;
-        }
-        .email a {
-            color: white;
-            text-decoration: none;
-        }
-        .expandable {
-            cursor: pointer;
-            font-size: 3vw;
-            margin-top: 20px;
-        }
-        .expanded-text {
-            display: none;
-            font-size: 2.5vw;
-            margin-top: 10px;
-            max-width: 90%;
-        }
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 15vw;
-            }
-            p {
-                font-size: 1.75vw;
-                max-width: 60%;
-            }
-            .email {
-                font-size: 1.25vw;
-            }
-            .expandable {
-                font-size: 1.5vw;
-            }
-            .expanded-text {
-                font-size: 1.25vw;
-                max-width: 60%;
-            }
-        }
-    </style>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>nScribe - AI Solutions</title>
+   <style>
+       html, body {
+           height: 100%;
+           margin: 0;
+           overflow: hidden;
+       }
+       body {
+           font-family: serif;
+           text-align: center;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           background-color: #34495E;
+           color: white;
+           padding-bottom: 20%;
+       }
+       h1 {
+           font-size: 20vw;
+           margin-bottom: 5px;
+           font-weight: normal;
+       }
+       p {
+           font-size: 4vw;
+           margin-bottom: 5px;
+           max-width: 90%;
+       }
+       .email {
+           font-size: 3vw;
+       }
+       .email a {
+           color: white;
+           text-decoration: none;
+       }
+       .expandable {
+           cursor: pointer;
+           font-size: 3vw;
+           margin-top: 20px;
+           color: black;
+       }
+       .expandable::before {
+           content: ">";
+           display: inline-block;
+           margin-right: 5px;
+           transition: transform 0.3s;
+       }
+       .expandable.expanded::before {
+           transform: rotate(90deg);
+       }
+       .expanded-text {
+           display: none;
+           font-size: 2.5vw;
+           margin-top: 10px;
+           max-width: 90%;
+           color: black;
+       }
+       @media (min-width: 768px) {
+           h1 {
+               font-size: 15vw;
+           }
+           p {
+               font-size: 1.75vw;
+               max-width: 60%;
+           }
+           .email {
+               font-size: 1.25vw;
+           }
+           .expandable {
+               font-size: 1.5vw;
+           }
+           .expanded-text {
+               font-size: 1.25vw;
+               max-width: 60%;
+           }
+       }
+   </style>
 </head>
 <body>
-    <h1>nScribe</h1>
-    <p>Our aim is to help you realise the economic potential of artificial intelligence in a way which is transparent, trustworthy, and secure.</p>
-    <p class="email"><a href="mailto:admin@nscribe.net">admin@nscribe.net</a></p>
+   <h1>nScribe</h1>
+   <p>Our aim is to help you realise the economic potential of artificial intelligence in a way which is transparent, trustworthy, and secure.</p>
+   <p class="email"><a href="mailto:admin@nscribe.net">admin@nscribe.net</a></p>
+   <p class="expandable" onclick="toggleExpand()">Our Approach</p>
+   <p class="expanded-text">Our approach focuses on seamlessly integrating state-of-the-art AI solutions to streamline your workflows. We prioritise understanding your unique requirements while maintaining best practices in terms of transparency and security throughout the entire process.</p>
 
-    <p class="expandable" onclick="toggleExpand()">> Our Approach</p>
-    <p class="expanded-text">Our approach focuses on seamlessly integrating state-of-the-art AI solutions to streamline your workflows. We prioritise understanding your unique requirements while maintaining best practices in terms of transparency and security throughout the entire process.</p>
-
-    <script>
-        function toggleExpand() {
-            var expandedText = document.querySelector('.expanded-text');
-            expandedText.style.display = expandedText.style.display === 'none' ? 'block' : 'none';
-        }
-    </script>
+   <script>
+       function toggleExpand() {
+           var expandable = document.querySelector('.expandable');
+           var expandedText = document.querySelector('.expanded-text');
+           expandable.classList.toggle('expanded');
+           expandedText.style.display = expandedText.style.display === 'none' ? 'block' : 'none';
+       }
+   </script>
 </body>
 </html>
