@@ -43,12 +43,16 @@
         .expandable-section {
             height: 200px;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .expandable {
             cursor: pointer;
             font-size: 3vw;
             margin-top: 50px;
             color: black;
+            white-space: nowrap;
         }
         .expandable::before {
             content: ">";
@@ -94,7 +98,7 @@
 </head>
 <body>
     <h1>nScribe</h1>
-    <p>Helping you to realise the economic potential of artificial intelligence in a way which is transparent, trustworthy, and secure.</p>
+    <p>Our aim is to help you realise the economic potential of artificial intelligence in a way which is transparent, trustworthy, and secure.</p>
     <p class="email"><a href="mailto:admin@nscribe.net">ben@nscribe.net</a></p>
     <div class="expandable-section">
         <p class="expandable" onclick="toggleExpand()">Our Approach</p>
