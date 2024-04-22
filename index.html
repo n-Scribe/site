@@ -14,18 +14,18 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
+            min-height: 80vh;
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
         }
         h1 {
-            font-size: 20vw;
+            font-size: 24vw;
             margin-bottom: 20px;
             font-weight: normal;
         }
         p {
-            font-size: 4.5vw;
+            font-size: 4vw;
             margin-bottom: 40px;
             max-width: 90%;
             font-weight: 500;
@@ -42,13 +42,14 @@
         .expandable-section {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
+            max-width: 80%;
             width: 100%;
-            text-align: left;
+            text-align: center;
         }
         .expandable {
             cursor: pointer;
-            font-size: 4vw;
+            font-size: 5vw;
             color: #F5F5F5;
             margin-top: 8px;
             margin-bottom: 8px;
@@ -66,7 +67,7 @@
             transform: rotate(90deg);
         }
         .expanded-text {
-            font-size: 3.5vw;
+            font-size: 4vw;
             max-width: 100%;
             color: white;
             font-weight: 200;
@@ -97,11 +98,11 @@
                 text-align: center;
             }
             .expandable {
-                font-size: 1.5vw;
+                font-size: 2vw;
                 font-weight: 200;
             }
             .expanded-text {
-                font-size: 1.25vw;
+                font-size: 1.5vw;
                 font-weight: 200;
                 max-width: 40%;
             }
@@ -117,7 +118,7 @@
         <div class="expandable" onclick="toggleExpand(this)">How can we help?</div>
         <div class="expanded-text">If you can think it, we'd love to have a look.</div>
     </div>
-    <p class="email"><a href="mailto:ben@nscribe.net">ben@nscribe.net</a></p>
+    <p class="email"><a href="mailto:ben@nscribe.net" title="ben@nscribe.net">Contact Us</a></p>
 
     <script>
         function toggleExpand(element) {
