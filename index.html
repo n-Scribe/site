@@ -31,7 +31,7 @@
             font-weight: 500;
         }
         .email {
-            margin-top: 30px;
+            margin-top: 20px;
             font-size: 4vw;
             font-weight: 600;
         }
@@ -51,14 +51,14 @@
             cursor: pointer;
             font-size: 5vw;
             color: #F5F5F5;
-            margin-top: 8px;
-            margin-bottom: 8px;
+            margin-top: 2px;
+            margin-bottom: 2px;
             display: flex;
             align-items: center;
             font-weight: 200;
         }
         .expandable::before {
-            content: ">";
+            content: "—";
             display: inline-block;
             margin-right: 5px;
             transition: transform 0.3s;
@@ -118,7 +118,7 @@
         <div class="expandable" onclick="toggleExpand(this)">How can we help?</div>
         <div class="expanded-text">If you can think it, we'd love to have a look.</div>
     </div>
-    <p class="email"><a href="mailto:ben@nscribe.net" title="ben@nscribe.net">Contact Us</a></p>
+    <p class="email"><a href="mailto:ben@nscribe.net" title="ben@nscribe.net">Contact us</a></p>
 
     <script>
         function toggleExpand(element) {
