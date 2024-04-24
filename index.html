@@ -4,27 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nScribe - AI Solutions</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: serif;
+            text-align: center;
+            background-color: #34495E;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 50vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 24vw;
+            margin-bottom: 0px;
+            font-weight: normal;
+        }
+        p {
+            font-size: 4vw;
+            margin-bottom: 40px;
+            max-width: 90%;
+            font-weight: 500;
+        }
+        .email {
+            margin-top: 20px;
+            font-size: 4vw;
+            font-weight: 600;
+        }
+        .email a {
+            color: white;
+            text-decoration: none;
+        }
+        .expandable-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 80%;
+            width: 100%;
+            text-align: center;
+        }
+        .expandable {
+            cursor: pointer;
+            font-size: 5vw;
+            color: #F5F5F5;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            display: flex;
+            align-items: center;
+            font-weight: 200;
+        }
+        .expandable::before {
+            content: "—";
+            display: inline-block;
+            margin-right: 5px;
+            transition: transform 0.3s;
+        }
+        .expandable.expanded::before {
+            transform: rotate(90deg);
+        }
+        .expanded-text {
+            font-size: 4vw;
+            max-width: 100%;
+            color: white;
+            font-weight: 200;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+        .expanded-text.show {
+            max-height: 1000px;
+        }
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 15vw;
+            }
+            p {
+                font-size: 1.75vw;
+                font-weight: 500;
+                max-width: 50%;
+            }
+            .email {
+                margin-top: 10px;
+                font-size: 1.25vw;
+            }
+            .expandable-section {
+                align-items: center;
+                text-align: center;
+            }
+            .expandable {
+                font-size: 2vw;
+                font-weight: 200;
+            }
+            .expanded-text {
+                font-size: 1.5vw;
+                font-weight: 200;
+                max-width: 40%;
+            }
+        }
+    </style>
 </head>
-<body id="index">
-<div class="main-content">
-    <header>
-        <h1 id="title"><a href="index.html">nScribe</a></h1>
-    </header>
-    <div data-include="nav-row.html"></div>
-    <div class="description">
-        <p class="center-text">We help you realise the economic potential of artificial intelligence in a way which is transparent, trustworthy, and secure.</p>
+<body>
+    <h1>nScribe</h1>
+    <p>We help you realise the economic potential of artificial intelligence in a way which is transparent, trustworthy, and secure.</p>
+    <div class="expandable-section">
+        <div class="expandable" onclick="toggleExpand(this)">What do we do?</div>
+        <div class="expanded-text">Instead of just another complicated tool, we work with you to custom-build seamlessly integrated AI solutions that streamline your existing workflows.</div>
+        <div class="expandable" onclick="toggleExpand(this)">How can we help?</div>
+        <div class="expanded-text">If you can think it, we'd love to have a look.</div>
     </div>
-    <div class="links">
-        <p class="email"><a href="mailto:ben@nscribe.net" title="ben@nscribe.net">Contact us</a></p>
-    </div>
-</div>
-<div class="chat-box">
-    <div class="toggle-button">&#9664;</div>
-    <div class="messages"></div>
-    <input type="text" class="input-field" placeholder="Example Summariser Tool" disabled>
-</div>
-<script src="include.js"></script>
-<script src="script.js"></script>
+    <p class="email"><a href="mailto:ben@nscribe.net" title="ben@nscribe.net">Contact us</a></p>
+
+    <script>
+        function toggleExpand(element) {
+            var expandable = element;
+            var expandedText = element.nextElementSibling;
+            expandable.classList.toggle('expanded');
+            expandedText.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
