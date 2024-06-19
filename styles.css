@@ -1,0 +1,199 @@
+body {
+    font-family: serif;
+    text-align: center;
+    background-color: #34495E;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    background-color: #2C3E50; /* Different background colour for header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    background-image: url('path/to/your/image.jpg'); /* Add your image path here */
+    background-size: cover; /* Ensures the image covers the header without stretching */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+h1 {
+    margin: 0;
+    font-weight: normal;
+}
+
+h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Styles for homepage */
+body#index header {
+    justify-content: center;
+}
+
+body#index h1 {
+    font-size: 24vw;
+}
+
+/* Styles for other pages */
+body#understanding header {
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+body#understanding h1 {
+    font-size: 4vw;
+}
+
+p {
+    font-size: 4vw;
+    margin-bottom: 40px;
+    max-width: 90%;
+    font-weight: 500;
+}
+
+.email {
+    margin-top: 20px;
+    font-size: 4vw;
+    font-weight: 600;
+}
+
+.email a {
+    color: white;
+    text-decoration: none;
+}
+
+.expandable-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80%;
+    width: 100%;
+    text-align: center;
+}
+
+.expandable {
+    cursor: pointer;
+    font-size: 5vw;
+    color: #F5F5F5;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    display: flex;
+    align-items: center;
+    font-weight: 200;
+}
+
+.expandable::before {
+    content: "—";
+    display: inline-block;
+    margin-right: 5px;
+    transition: transform 0.3s;
+}
+
+.expandable.expanded::before {
+    transform: rotate(90deg);
+}
+
+.expanded-text {
+    font-size: 4vw;
+    max-width: 100%;
+    color: white;
+    font-weight: 200;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.expanded-text.show {
+    max-height: 1000px;
+}
+
+@media (min-width: 768px) {
+    body#index h1 {
+        font-size: 15vw;
+    }
+
+    body#understanding h1 {
+        font-size: 2vw;
+    }
+
+    p {
+        font-size: 1.75vw;
+        font-weight: 500;
+        max-width: 50%;
+    }
+
+    .email {
+        margin-top: 10px;
+        font-size: 1.25vw;
+    }
+
+    .expandable-section {
+        align-items: center;
+        text-align: center;
+    }
+
+    .expandable {
+        font-size: 2vw;
+        font-weight: 200;
+    }
+
+    .expanded-text {
+        font-size: 1.5vw;
+        font-weight: 200;
+        max-width: 40%;
+    }
+}
+
+/* Chat box styles */
+.chat-box {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 30%;
+    height: 100vh;
+    background-color: #2C3E50;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.chat-box .messages {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.chat-box .message {
+    margin: 10px 0;
+}
+
+.chat-box .message.user {
+    text-align: right;
+}
+
+.chat-box .input-field {
+    background-color: #888;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 1vw;
+    width: 100%;
+    box-sizing: border-box;
+}

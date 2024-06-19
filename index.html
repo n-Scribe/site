@@ -4,113 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nScribe - AI Solutions</title>
-    <style>
-        body {
-            font-family: serif;
-            text-align: center;
-            background-color: #34495E;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 50vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        h1 {
-            font-size: 24vw;
-            margin-bottom: 0px;
-            font-weight: normal;
-        }
-        p {
-            font-size: 4vw;
-            margin-bottom: 40px;
-            max-width: 90%;
-            font-weight: 500;
-        }
-        .email {
-            margin-top: 20px;
-            font-size: 4vw;
-            font-weight: 600;
-        }
-        .email a {
-            color: white;
-            text-decoration: none;
-        }
-        .expandable-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 80%;
-            width: 100%;
-            text-align: center;
-        }
-        .expandable {
-            cursor: pointer;
-            font-size: 5vw;
-            color: #F5F5F5;
-            margin-top: 2px;
-            margin-bottom: 2px;
-            display: flex;
-            align-items: center;
-            font-weight: 200;
-        }
-        .expandable::before {
-            content: "—";
-            display: inline-block;
-            margin-right: 5px;
-            transition: transform 0.3s;
-        }
-        .expandable.expanded::before {
-            transform: rotate(90deg);
-        }
-        .expanded-text {
-            font-size: 4vw;
-            max-width: 100%;
-            color: white;
-            font-weight: 200;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            margin-top: 5px;
-            margin-bottom: 20px;
-        }
-        .expanded-text.show {
-            max-height: 1000px;
-        }
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 15vw;
-            }
-            p {
-                font-size: 1.75vw;
-                font-weight: 500;
-                max-width: 50%;
-            }
-            .email {
-                margin-top: 10px;
-                font-size: 1.25vw;
-            }
-            .expandable-section {
-                align-items: center;
-                text-align: center;
-            }
-            .expandable {
-                font-size: 2vw;
-                font-weight: 200;
-            }
-            .expanded-text {
-                font-size: 1.5vw;
-                font-weight: 200;
-                max-width: 40%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <h1>nScribe</h1>
+<body id="index">
+    <header>
+        <h1 id="title"><a href="index.html">nScribe</a></h1>
+    </header>
     <p>We help you realise the economic potential of artificial intelligence in a way which is transparent, trustworthy, and secure.</p>
     <div class="expandable-section">
         <div class="expandable" onclick="toggleExpand(this)">What do we do?</div>
@@ -119,14 +18,16 @@
         <div class="expanded-text">If you can think it, we'd love to have a look.</div>
     </div>
     <p class="email"><a href="mailto:ben@nscribe.net" title="ben@nscribe.net">Contact us</a></p>
+    <p><a href="organisation.html" title="Understanding Your Organisation" style="color: white; text-decoration: none;">Learn how we understand your organisation</a></p>
 
-    <script>
-        function toggleExpand(element) {
-            var expandable = element;
-            var expandedText = element.nextElementSibling;
-            expandable.classList.toggle('expanded');
-            expandedText.classList.toggle('show');
-        }
-    </script>
+    <div class="chat-box">
+        <div class="messages">
+            <div class="message user">Summarise this page</div>
+            <div class="message">We help you realise the economic potential of artificial intelligence in a way which is transparent, trustworthy, and secure.</div>
+        </div>
+        <input type="text" class="input-field" placeholder="Currently unavailable" disabled>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
