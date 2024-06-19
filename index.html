@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body id="index">
+<div class="main-content">
     <header>
         <h1 id="title"><a href="index.html">nScribe</a></h1>
     </header>
@@ -17,17 +18,14 @@
         <div class="expandable" onclick="toggleExpand(this)">How can we help?</div>
         <div class="expanded-text">If you can think it, we'd love to have a look.</div>
     </div>
-    <p class="email"><a href="mailto:ben@nscribe.net" title="ben@nscribe.net">Contact us</a></p>
     <p><a href="organisation.html" title="Understanding Your Organisation" style="color: white; text-decoration: none;">Learn how we understand your organisation</a></p>
-
-    <div class="chat-box">
-        <div class="messages">
-            <div class="message user">Summarise this page</div>
-            <div class="message">We help you realise the economic potential of artificial intelligence in a way which is transparent, trustworthy, and secure.</div>
-        </div>
-        <input type="text" class="input-field" placeholder="Currently unavailable" disabled>
-    </div>
-    
-    <script src="script.js"></script>
+    <p class="email"><a href="mailto:ben@nscribe.net" title="ben@nscribe.net">Contact us</a></p>
+</div>
+<div class="chat-box">
+    <div class="toggle-button">&#9664;</div>
+    <div class="messages"></div>
+    <input type="text" class="input-field" placeholder="Currently unavailable" disabled>
+</div>
+<script src="script.js"></script>
 </body>
 </html>

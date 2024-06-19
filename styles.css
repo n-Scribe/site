@@ -11,6 +11,13 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.main-content {
+    width: 70%; /* Adjust width to make space for the chat box */
+    margin-right: 30%; /* Reserve space for the chat box */
+    text-align: center; /* Center align text */
 }
 
 header {
@@ -46,12 +53,12 @@ body#index h1 {
 }
 
 /* Styles for other pages */
-body#understanding header {
+body#understanding-page header {
     justify-content: flex-start;
     padding-left: 20px;
 }
 
-body#understanding h1 {
+body#understanding-page h1 {
     font-size: 4vw;
 }
 
@@ -60,6 +67,7 @@ p {
     margin-bottom: 40px;
     max-width: 90%;
     font-weight: 500;
+    margin: 0 auto; /* Center align paragraphs */
 }
 
 .email {
@@ -80,6 +88,7 @@ p {
     max-width: 80%;
     width: 100%;
     text-align: center;
+    margin: 0 auto; /* Center align expandable section */
 }
 
 .expandable {
@@ -125,7 +134,7 @@ p {
         font-size: 15vw;
     }
 
-    body#understanding h1 {
+    body#understanding-page h1 {
         font-size: 2vw;
     }
 
@@ -164,7 +173,7 @@ p {
     top: 0;
     width: 30%;
     height: 100vh;
-    background-color: #2C3E50;
+    background-color: #3B4A6B;
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
@@ -172,6 +181,32 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    border-left: 1px solid #ccc;
+    transition: transform 0.3s ease-out;
+}
+
+.chat-box.collapsed {
+    transform: translateX(100%);
+}
+
+.chat-box .toggle-button {
+    position: absolute;
+    top: 10px;
+    left: -40px;
+    width: 30px;
+    height: 30px;
+    background-color: #3B4A6B;
+    color: white;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-out;
+}
+
+.chat-box .toggle-button.collapsed {
+    transform: translateX(-100%);
 }
 
 .chat-box .messages {
@@ -182,10 +217,23 @@ p {
 
 .chat-box .message {
     margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%; /* Limit width */
 }
 
 .chat-box .message.user {
     text-align: right;
+    background-color: #4A90E2;
+    color: white;
+    margin-left: auto; /* Align to the right */
+}
+
+.chat-box .message.bot {
+    text-align: left;
+    background-color: #f1f1f1;
+    color: black;
+    margin-right: auto; /* Align to the left */
 }
 
 .chat-box .input-field {
