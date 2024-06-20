@@ -26,8 +26,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
-    background-image: url('path/to/your/image.jpg'); /* Add your image path here */
+    background-image: url('dalle3.jpg'); /* Add your image path here */
     background-size: cover; /* Ensures the image covers the header without stretching */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -43,42 +42,72 @@ h1 a {
     text-decoration: none;
 }
 
-/* Styles for homepage */
-body#index header {
-    justify-content: center;
+/* Ensure main content is centered */
+.main-content {
+    width: 70%; /* Adjust width to make space for the chat box */
+    margin-right: 30%; /* Reserve space for the chat box */
+    text-align: center; /* Center align text */
 }
 
-body#index h1 {
-    font-size: 24vw;
+.text-content {
+    margin-left: 20px;
 }
 
-/* Styles for other pages */
-body#understanding-page header {
-    justify-content: flex-start;
-    padding-left: 20px;
+/* Left align sections below the description */
+.section {
+    text-align: left; /* Left align text */
+    margin: 20px 0; /* Add some margin for spacing */
 }
 
-body#understanding-page h1 {
-    font-size: 4vw;
+.section-title {
+    font-size: 2em; /* Make the headers larger */
+    font-weight: bold;
+    margin-bottom: 10px; /* Add some space below the header */
 }
 
-p {
-    font-size: 4vw;
-    margin-bottom: 40px;
-    max-width: 90%;
-    font-weight: 500;
-    margin: 0 auto; /* Center align paragraphs */
+.section-content {
+    font-size: 1.2em; /* Slightly larger font for the content */
+    margin-bottom: 20px; /* Add some space below the content */
 }
 
-.email {
-    margin-top: 20px;
-    font-size: 4vw;
-    font-weight: 600;
+/* Center the description div */
+.description {
+    width: 100%; /* Ensure it takes the full width available */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
-.email a {
+/* Center the description div */
+.links {
+    width: 100%; /* Ensure it takes the full width available */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+/* Navigation row styles */
+.nav-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #2C3E50;
+    padding: 10px 0;
+}
+
+.nav-column {
+    flex: 1;
+    text-align: center;
+}
+
+.nav-column a {
     color: white;
     text-decoration: none;
+    font-size: 1.5em;
+}
+
+.description {
+    margin: 20px 0;
 }
 
 .expandable-section {
@@ -129,6 +158,25 @@ p {
     max-height: 1000px;
 }
 
+.links {
+    margin-top: 20px;
+}
+
+.links p {
+    font-size: 4vw;
+}
+
+.email {
+    font-weight: 600;
+
+}
+
+.email a {
+    color: white;
+    text-decoration: none;
+    font-size: 1vw;
+}
+
 @media (min-width: 768px) {
     body#index h1 {
         font-size: 15vw;
@@ -173,7 +221,7 @@ p {
     top: 0;
     width: 30%;
     height: 100vh;
-    background-color: #3B4A6B;
+    background-color: #3B3B3B; /* Grey background for chat box */
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
@@ -195,7 +243,7 @@ p {
     left: -40px;
     width: 30px;
     height: 30px;
-    background-color: #3B4A6B;
+    background-color: #3B3B3B;
     color: white;
     border: 1px solid #ccc;
     cursor: pointer;
@@ -220,6 +268,8 @@ p {
     padding: 10px;
     border-radius: 10px;
     max-width: 70%; /* Limit width */
+    background-color: #4A4A4A; /* Grey background for user messages */
+    color: white; /* White text */
 }
 
 .chat-box .message.user {
@@ -227,13 +277,15 @@ p {
     background-color: #4A90E2;
     color: white;
     margin-left: auto; /* Align to the right */
+    border-radius: 15px; /* Rounded corners */
 }
 
 .chat-box .message.bot {
     text-align: left;
-    background-color: #f1f1f1;
-    color: black;
+    background-color: transparent; /* Transparent background for bot messages */
+    color: white; /* White text */
     margin-right: auto; /* Align to the left */
+    border-radius: 15px; /* Rounded corners */
 }
 
 .chat-box .input-field {
@@ -244,4 +296,51 @@ p {
     font-size: 1vw;
     width: 100%;
     box-sizing: border-box;
+    border-radius: 15px; /* Rounded corners */
+}
+
+/* Technologies section */
+.technologies {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.technologies h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+    justify-items: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+.tech-grid div {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    width: 100%;
+    height: 100%;
+}
+
+.tech-grid img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-grid {
+        grid-template-columns: 1fr; /* 1 column for very small screens */
+    }
 }

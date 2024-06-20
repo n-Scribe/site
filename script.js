@@ -49,9 +49,14 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     if (currentPage === 'index') {
-        appendMessage('Summarise this page', 'We help you realise the economic potential of artificial intelligence in a way which is transparent, trustworthy, and secure.');
+        appendMessage('Summarise this page',
+        'This page promotes nScribe\'s approach to AI integration, emphasizing transparent, trustworthy, and secure methods. They custom-build AI solutions to enhance existing workflows rather than just providing tools. The company invites inquiries and ideas to better understand organisational needs. Contact information is provided.'
+        );
+
     } else if (currentPage === 'understanding-page') {
-        appendMessage('Summarise this page', 'At nScribe, we believe that the key to successful AI integration is a deep understanding of your unique organisational needs and workflows.');
+        appendMessage('Summarise this page',
+        'This page is showing how nScribe integrates AI into organisations. It details their client-focused approach, starting with building relationships, gathering requirements, providing expert consultations, and educating teams to understand and utilise AI effectively. Contact information is also available.'
+        );
     }
 
     // Scroll to the bottom of the chat
