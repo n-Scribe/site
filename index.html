@@ -145,10 +145,21 @@
         window.addEventListener('load', function() {
             Calendly.initBadgeWidget({
                 url: 'https://calendly.com/nscribe/15-minute-introduction?primary_color=34499e',
-                text: 'Let&#39;s talk—schedule a meeting',
+                text: 'Let\'s talk—schedule a meeting',
                 color: '#34499e',
                 textColor: '#ffffff',
-                branding: undefined
+                branding: undefined,
+                position: 'bottom-right',  // You can change this
+                styles: {
+                    branding: {
+                        display: 'none'
+                    },
+                    button: {
+                        borderRadius: '5px',  // Rounded corners
+                        padding: '10px 20px',  // Adjust size
+                        fontSize: '16px'  // Adjust font size
+                    }
+                }
             });
         });
     </script>
