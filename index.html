@@ -131,6 +131,7 @@
     </div>
     <p class="email"><a href="mailto:ben@nscribe.ai" title="ben@nscribe.ai">Contact us</a></p>
     <script>
+        // Move toggleExpand function outside of window.onload
         function toggleExpand(element) {
             var expandable = element;
             var expandedText = element.nextElementSibling;
@@ -139,15 +140,17 @@
         }
         
         // Calendly badge widget initialization
-        window.onload = function() {
-            Calendly.initBadgeWidget({
-                url: 'https://calendly.com/ben-nscribe/15-minute-introduction?primary_color=34499e',
-                text: 'Let's talk—schedule a meeting',
-                color: '#34499e',
-                textColor: '#ffffff',
-                branding: undefined
-            });
-        }
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                Calendly.initBadgeWidget({
+                    url: 'https://calendly.com/ben-nscribe/15-minute-introduction?primary_color=34499e',
+                    text: 'Let's talk—schedule a meeting',
+                    color: '#34499e',
+                    textColor: '#ffffff',
+                    branding: undefined
+                });
+            }, 1000); // Delay initialization by 1 second
+        });
     </script>
 </body>
 </html>
