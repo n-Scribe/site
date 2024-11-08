@@ -3,152 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nScribe - AI Solutions</title>
-
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <!-- Commented out the manifest link -->
-    <!-- <link rel="manifest" href="/site.webmanifest"> -->
-
-    <!-- Calendly badge widget begin -->
-    
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <!-- Removed 'async' from the script tag -->
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-    <!-- Calendly badge widget end -->
-    <style>
-        body {
-            font-family: serif;
-            text-align: center;
-            background-color: #34495E;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 50vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        h1 {
-            font-size: 24vw;
-            margin-bottom: 0px;
-            font-weight: normal;
-        }
-        p {
-            font-size: 4vw;
-            margin-bottom: 40px;
-            max-width: 90%;
-            font-weight: 500;
-        }
-        .email {
-            margin-top: 20px;
-            font-size: 4vw;
-            font-weight: 600;
-        }
-        .email a {
-            color: white;
-            text-decoration: none;
-        }
-        .expandable-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 80%;
-            width: 100%;
-            text-align: center;
-        }
-        .expandable {
-            cursor: pointer;
-            font-size: 5vw;
-            color: #F5F5F5;
-            margin-top: 2px;
-            margin-bottom: 2px;
-            display: flex;
-            align-items: center;
-            font-weight: 200;
-        }
-        .expandable::before {
-            content: "—";
-            display: inline-block;
-            margin-right: 5px;
-            transition: transform 0.3s;
-        }
-        .expandable.expanded::before {
-            transform: rotate(90deg);
-        }
-        .expanded-text {
-            font-size: 4vw;
-            max-width: 100%;
-            color: white;
-            font-weight: 200;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            margin-top: 5px;
-            margin-bottom: 20px;
-        }
-        .expanded-text.show {
-            max-height: 1000px;
-        }
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 15vw;
-            }
-            p {
-                font-size: 1.75vw;
-                font-weight: 500;
-                max-width: 50%;
-            }
-            .email {
-                margin-top: 10px;
-                font-size: 1.25vw;
-            }
-            .expandable-section {
-                align-items: center;
-                text-align: center;
-            }
-            .expandable {
-                font-size: 2vw;
-                font-weight: 200;
-            }
-            .expanded-text {
-                font-size: 1.5vw;
-                font-weight: 200;
-                max-width: 40%;
-            }
-        }
-    </style>
+    <title>nScribe</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>nScribe</h1>
-    <p>We help you to realise the economic potential of artificial intelligence in a way which is transparent, trustworthy, and secure.</p>
-    <div class="expandable-section">
-        <div class="expandable" onclick="toggleExpand(this)">What do we do?</div>
-        <div class="expanded-text">Instead of just another complicated tool, we work with you to custom-build seamlessly integrated AI solutions that streamline your existing workflows.</div>
-        <div class="expandable" onclick="toggleExpand(this)">How can we help?</div>
-        <div class="expanded-text">If you can imagine it, we'd love to take a look.</div>
-    </div>
-    <p class="email"><a href="mailto:ben@nscribe.ai" title="ben@nscribe.ai">Contact us</a></p>
-    <script>
-        function toggleExpand(element) {
-            var expandable = element;
-            var expandedText = element.nextElementSibling;
-            expandable.classList.toggle('expanded');
-            expandedText.classList.toggle('show');
-        }
+    <header class="main-header">
+        <div class="logo">nScribe</div>
+        <!-- Calendly link widget begin -->
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/nscribe/15-minute-introduction'});return false;" class="consultation-btn" style="text-decoration: none;">Schedule Consultation</a>
+        <!-- Calendly link widget end -->
+    </header>
 
-        // Calendly badge widget initialization
-        window.addEventListener('load', function() {
-            Calendly.initBadgeWidget({
-                url: 'https://calendly.com/nscribe/15-minute-introduction?primary_color=34499e',
-                text: 'Let\'s talk—schedule a meeting',
-                color: '#7FA1C3',
-                textColor: '#ffffff',
-                branding: undefined,
+    <div class="content-wrapper">
+        <section class="hero">
+            <h1>nScribe</h1>
+            <p class="tagline">AI systems that work for you—precise, powerful, and protected</p>
+            <p class="value-prop">We transform complex workflows into seamless processes that feel like they were always there—handling challenges beyond standard programming while becoming an invisible part of your operation.</p>
+            <p class="social-proof">Supporting innovative teams across education, finance, and enterprise projects</p>
+        </section>
+
+        <section class="expandable-section" id="process">
+            <div class="section-header">
+                <h2>Our Process</h2>
+                <p>We believe in a collaborative approach that begins with understanding your unique needs and continues through to long-term support. Our process ensures we deliver solutions that create genuine value for your organization.</p>
+            </div>
+            <div class="section-content">
+                <div class="process-steps">
+                    <div class="step">
+                        <h3>1. Deep Understanding</h3>
+                        <p>We begin by immersing ourselves in your operations and processes. Our team takes the time to thoroughly understand your specific needs, organizational structure, and industry-specific requirements, ensuring our solutions align perfectly with your objectives.</p>
+                    </div>
+        
+                    <div class="step">
+                        <h3>2. Solution Design</h3>
+                        <p>Drawing on our extensive expertise, we evaluate all possible approaches to determine what will deliver the most value. We consider not just technical feasibility but also practical implementation within your existing workflows, ensuring solutions that truly serve your needs.</p>
+                    </div>
+        
+                    <div class="step">
+                        <h3>3. Collaborative Development</h3>
+                        <p>Throughout the development process, we maintain clear and consistent communication. Our iterative approach ensures you're always informed and involved, allowing us to refine and adjust the solution based on your feedback and evolving requirements.</p>
+                    </div>
+        
+                    <div class="step">
+                        <h3>4. Ongoing Support</h3>
+                        <p>Our commitment extends beyond initial implementation. We provide comprehensive long-term support, including managed services, maintenance, and hosting options where needed, ensuring your solution continues to deliver value well into the future.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="expandable-section" id="our-work">
+            <div class="section-header">
+                <h2>Our Work</h2>
+                <p>We provide comprehensive AI services through expert consultancy, custom software development, and dedicated team augmentation. Our experience ranges from early-stage startups to established enterprises, offering both strategic guidance and hands-on implementation support across major AI initiatives.</p>
+            </div>
+            <div class="section-content">
+                <div class="box-grid">
+                    <!-- AI Integration Box -->
+                    <div class="box">
+                        <h3>AI Integration</h3>
+                        <p>Our integration expertise helps organizations seamlessly incorporate AI into their existing workflows and operations. Drawing from our international presentation experience and deep technical knowledge, we provide comprehensive educational services and strategic guidance to ensure successful AI adoption across your organization.</p>
+                    </div>
+        
+                    <!-- Process Automation Box -->
+                    <div class="box">
+                        <h3>Process Automation</h3>
+                        <p>We specialize in automating complex, high-throughput tasks that exceed traditional programming capabilities. Our solutions are carefully designed to integrate seamlessly with your existing systems, delivering intelligent automation that adapts to your unique operational requirements and scales with your needs.</p>
+                    </div>
+        
+                    <!-- Data Analysis Box -->
+                    <div class="box">
+                        <h3>Data Analysis</h3>
+                        <p>Our comprehensive data analysis services encompass everything from web scraping and data preprocessing to advanced NLP techniques and topic modeling. We transform raw data into actionable insights, supporting market research, process optimization, and strategic decision-making across your organization.</p>
+                    </div>
+        
+                    <!-- AI-Powered MVPs Box -->
+                    <div class="box">
+                        <h3>AI-Powered MVPs</h3>
+                        <p>We collaborate closely with startups and established companies to develop innovative AI prototypes as well as production systems. Our experience in rapid prototype development combines with our deep understanding of design principles to create MVPs that effectively demonstrate your concept while adhering to your vision and requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="expandable-section" id="models">
+            <div class="section-header">
+                <h2>Models</h2>
+                <p>We work closely with you to identify the most effective model or combination of models for your use case. Whether you require cloud-hosted solutions from major providers, private hosting for enhanced security, or local deployment for complete data control, we can architect a solution that aligns with your requirements.</p>
+            </div>
+            <div class="section-content">
+                <div class="box-grid">
+                    <!-- ChatGPT Box -->
+                    <div class="box">
+                        <h3>ChatGPT</h3>
+                        <p>The industry's most recognized AI solution, ChatGPT leads the market with revolutionary voice interaction capabilities and advanced multi-modal processing. It offers enterprise-grade deployment through Microsoft Azure, alongside robust API integration options for seamless implementation into existing systems.</p>
+                    </div>
+        
+                    <!-- Claude Box -->
+                    <div class="box">
+                        <h3>Claude</h3>
+                        <p>Claude stands out for its exceptional analytical capabilities, offering superior performance in complex reasoning tasks through Claude 3.5 Sonnet. It provides cost-effective options with Claude 3 Haiku, excelling in document analysis and technical tasks while featuring advanced computer interaction capabilities.</p>
+                    </div>
+        
+                    <!-- Gemini Box -->
+                    <div class="box">
+                        <h3>Gemini</h3>
+                        <p>Gemini excels in handling extensive content with its industry-leading context window for large documents. It delivers superior long-form content analysis and advanced video content understanding, all while maintaining seamless integration within the Google ecosystem.</p>
+                    </div>
+        
+                    <!-- Llama Box -->
+                    <div class="box">
+                        <h3>Llama</h3>
+                        <p>As the most powerful privately deployable model, Llama 2 405B offers complete control over your AI infrastructure. Its open-source architecture enables custom fine-tuning and provides flexible deployment options, ensuring maximum security through complete data pipeline control.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="expandable-section" id="tooling">
+            <div class="section-header">
+                <h2>Tooling</h2>
+                <p>Effective solutions often require sophisticated combinations of models and specialized tools. While we're well-versed in popular open-source projects and standard solutions, we frequently develop custom tooling to address specific challenges. This balanced approach ensures you get the most efficient and cost-effective solution for your unique needs.</p>
+            </div>
+            <div class="section-content">
+                <div class="box-grid">
+                    <!-- LangChain Box -->
+                    <div class="box">
+                        <h3>LangChain</h3>
+                        <p>While we're certified in LangChain's comprehensive toolkit for LLM systems, including its robust solutions for retrieval, pipelines, and agentic systems, we carefully evaluate whether its standardized approaches truly serve your specific needs. Our expertise allows us to determine when LangChain is the right choice and when custom solutions would better serve your objectives.</p>
+                    </div>
+        
+                    <!-- LlamaIndex Box -->
+                    <div class="box">
+                        <h3>LlamaIndex</h3>
+                        <p>For projects requiring sophisticated data integration and advanced retrieval techniques, we leverage LlamaIndex's specialized capabilities. Its robust framework excels in retrieval augmented generation and complex data workflows, offering particular advantages for projects requiring nuanced data handling and advanced retrieval methodologies.</p>
+                    </div>
+        
+                    <!-- DSPy Box -->
+                    <div class="box">
+                        <h3>DSPy</h3>
+                        <p>We employ DSPy's innovative approach to prompt optimization, using sophisticated training and testing methodologies to fine-tune system responses. While powerful for many applications, we carefully assess its suitability for each use case, ensuring this automated tuning approach aligns with your specific requirements and performance goals.</p>
+                    </div>
+        
+                    <!-- Custom Solutions Box -->
+                    <div class="box">
+                        <h3>Custom Development</h3>
+                        <p>When standard tools don't quite fit the bill, we develop custom solutions that perfectly match your needs. Our approach carefully balances performance optimization with cost-effectiveness, creating specialized tools that outperform generic solutions while remaining maintainable and scalable. This ensures you get exactly what you need without unnecessary complexity or overhead.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="expandable-section" id="privacy-security">
+            <div class="section-header">
+                <h2>Privacy & Security</h2>
+                <p>In today's AI landscape, data protection isn't just a feature—it's fundamental. We implement comprehensive security measures and privacy controls at every level of development, ensuring your sensitive information remains protected while maintaining optimal system performance.</p>
+            </div>
+            <div class="section-content">
+                <div class="box-grid">
+                    <!-- Comprehensive Security Box -->
+                    <div class="box">
+                        <h3>Comprehensive Security</h3>
+                        <p>Security and privacy considerations form the foundation of every solution we build. We begin each project with a thorough analysis of your specific requirements and regulatory obligations, shaping our development approach from initial architecture through to implementation and ongoing maintenance.</p>
+                    </div>
+        
+                    <!-- Privacy by Design Box -->
+                    <div class="box">
+                        <h3>Privacy by Design</h3>
+                        <p>Privacy is built into our development process from day one, not added as an afterthought. We implement data minimization principles, robust access controls, and secure data handling practices throughout the solution lifecycle, ensuring your AI systems protect sensitive information while maintaining peak performance.</p>
+                    </div>
+        
+                    <!-- Secure Development Box -->
+                    <div class="box">
+                        <h3>Secure Development</h3>
+                        <p>Our development process adheres to international security standards, including guidelines from the UK NCSC and US CISA for secure AI system development. Following OWASP Secure Coding Practices, we implement continuous security testing throughout the development lifecycle, ensuring protection against emerging threats.</p>
+                    </div>
+        
+                    <!-- Data Protection Box -->
+                    <div class="box">
+                        <h3>Data Protection</h3>
+                        <p>We implement comprehensive data protection measures including end-to-end encryption and robust access control systems. Our solutions can be deployed on-premises, in private clouds, or in hybrid setups, ensuring your data remains within your specified security boundaries while maintaining full functionality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>Contact Us</h2>
+            <p>Let's discuss how we can help you</p>
+            <form action="https://formspree.io/f/mvgoadzk" method="POST" id="contact-form">
+            <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <textarea id="message" name="message" placeholder="Message" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        document.querySelectorAll('.expandable-section').forEach(section => {
+            section.addEventListener('click', (e) => {
+                // Only trigger if clicking the header area
+                if (e.target.closest('.section-header')) {
+                    // Close other sections
+                    document.querySelectorAll('.expandable-section').forEach(otherSection => {
+                        if (otherSection !== section) {
+                            otherSection.classList.remove('expanded');
+                        }
+                    });
+                    // Toggle current section
+                    section.classList.toggle('expanded');
+                }
             });
         });
     </script>
