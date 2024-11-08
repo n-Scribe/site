@@ -240,11 +240,11 @@ button[type="submit"]:hover {
     }
     
     .hero {
-        padding: 80px 2% 30px;
+        padding: 40px 2% 30px;
     }
     
     .hero h1 {
-        font-size: 36px;
+        font-size: 128px;
     }
     
     .hero .tagline {
