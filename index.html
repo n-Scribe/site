@@ -219,14 +219,36 @@
             section.addEventListener('click', (e) => {
                 // Only trigger if clicking the header area
                 if (e.target.closest('.section-header')) {
+                    // Store the current scroll position relative to the clicked section
+                    const sectionRect = section.getBoundingClientRect();
+                    const offsetFromViewport = sectionRect.top;
+                    
                     // Close other sections
                     document.querySelectorAll('.expandable-section').forEach(otherSection => {
                         if (otherSection !== section) {
                             otherSection.classList.remove('expanded');
                         }
                     });
+        
                     // Toggle current section
+                    const wasExpanded = section.classList.contains('expanded');
                     section.classList.toggle('expanded');
+        
+                    // After a brief delay to allow the DOM to update
+                    requestAnimationFrame(() => {
+                        // If we're expanding (not collapsing), adjust scroll position
+                        if (!wasExpanded) {
+                            // Calculate where to scroll - maintain the section's position relative to viewport
+                            const newSectionRect = section.getBoundingClientRect();
+                            const scroll = window.scrollY + (newSectionRect.top - offsetFromViewport);
+                            
+                            // Smooth scroll to the calculated position
+                            window.scrollTo({
+                                top: scroll,
+                                behavior: 'auto' // Use 'auto' instead of 'smooth' to prevent iOS issues
+                            });
+                        }
+                    });
                 }
             });
         });
